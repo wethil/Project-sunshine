@@ -91,6 +91,8 @@ public class MainActivity extends ActionBarActivity {
 
             listView.setAdapter(mForecastAdapter);
 
+            
+
             return rootView;
         }
     }
