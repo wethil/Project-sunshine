@@ -1,5 +1,6 @@
 package com.example.wethil.sunshine;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -9,10 +10,15 @@ import android.view.MenuItem;
 @SuppressWarnings("ALL")
 public class MainActivity extends ActionBarActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new ForecastFragment())
@@ -36,9 +42,13 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
+            if (id == R.id.action_settings ) {
+
+                startActivity(new Intent(this, SettingsActivity.class));
+
+                return true;
+            }
 
         return super.onOptionsItemSelected(item);
     }
